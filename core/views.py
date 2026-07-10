@@ -16,3 +16,11 @@ class AboutView(View):
             'content': 'Welcome to the About Page!'
         }
         return render(request, 'about.html', context)
+
+class ContactView(View):
+    def get(self, request, *args, **kwargs):
+        context = {
+            'title': 'Contact Page',
+            'content': 'Welcome to the Contact Page!'
+        }
+        return render(request, 'contact.html', context)
