@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
-        'NAME': 'Landing_page',
+        'NAME': 'Tailwind',
         'HOST': 'LAPTOP-2EH8E3FN',
         'OPTIONS': {
             'driver': 'ODBC Driver 17 for SQL Server',
