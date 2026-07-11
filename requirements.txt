@@ -2,4 +2,5 @@ Django
 Pillow
 django-environ
 django-tailwind
-mssql-django
+gunicorn
+Whitenoise
