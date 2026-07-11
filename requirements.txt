@@ -5,3 +5,4 @@ django-tailwind
 gunicorn
 Whitenoise
 mssql-django
+pyodbc
