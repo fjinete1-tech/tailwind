@@ -1,3 +1,4 @@
+FROM tiangolo/uwsgi-nginx-flask:python3.6-alpine3.7
 FROM python:3.12-slim
 
 RUN apt-get update && apt-get install -y \
