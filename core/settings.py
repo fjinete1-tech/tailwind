@@ -90,10 +90,9 @@ DATABASES = {
         'USER': 'django_user',
         'PASSWORD': 'Andrea1499',
         'HOST': 'LAPTOP-2EH8E3FN',
-        'PORT': '1433',
+        'PORT': '',
         'OPTIONS': {
             'driver': 'ODBC Driver 17 for SQL Server',
-            'extra_params': 'TrustServerCertificate=yes',
         },
     }
 }
