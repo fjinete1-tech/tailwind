@@ -1,7 +1,6 @@
 import os
 from pathlib import Path
 import environ
-import pyodbc
 
 env = environ.Env()
 environ.Env.read_env()
@@ -94,6 +93,7 @@ DATABASES = {
         'PORT': '',
         'OPTIONS': {
             'driver': 'ODBC Driver 17 for SQL Server',
+            'extra_params': 'TrustServerCertificate=yes;',
         },
     }
 }
