@@ -32,6 +32,7 @@ RUN pip install --upgrade pip \
 
 COPY . .
 
+RUN python manage.py collectstatic --noinput
 
 # Puerto de Render
 EXPOSE 8000
