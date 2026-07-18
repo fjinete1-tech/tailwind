@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'core',
     'tailwind',
     'theme',
+    'usuarios'
 ]
 
 INTERNAL_IPS = [
@@ -148,6 +149,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/6.0/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'usuarios.Usuario'
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'login'
 
 if not DEBUG:
     EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'

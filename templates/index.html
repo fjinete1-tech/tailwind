@@ -59,7 +59,7 @@
                       <button type="submit" class="block w-full py-3 px-4 rounded-md shadow bg-indigo-500 text-white font-medium hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 focus:ring-offset-gray-900">Start free trial</button>
                     </div>
                   </div>
-                  <p class="mt-3 text-sm text-gray-300 sm:mt-4">Start your free 14-day trial, no credit card necessary. By providing your email, you agree to our <a href="#" class="font-medium text-white">terms or service</a>.</p>
+                  <p class="mt-3 text-sm text-gray-300 sm:mt-4">Start your free 14-day trial, no credit card necessary. By providing your email, you agree to our <a href="#" class="font-medium text-gray-300">terms or service</a>.</p>
                 </form>
 
               </div>
@@ -68,7 +68,7 @@
           <div class="mt-12 -mb-16 sm:-mb-48 lg:m-0 lg:relative">
             <div class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0">
               <!-- Illustration taken from Lucid Illustrations: https://lucid.pixsellz.io/ -->
-              <img class="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none" src="{% static 'img/ambulancia.jpeg' %}" alt="">
+              <img class="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-80 mt-16 lg:w-30 lg:max-w-none" src="{% static 'img/ambulancia.jpeg' %}" alt="Ambulancia">
             </div>
           </div>
         </div>
@@ -77,6 +77,91 @@
 
     <!-- More main page content here... -->
 </main>
+
+<footer class="bg-white border-t border-gray-200">
+    <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+
+        <div class="grid grid-cols-1 gap-12 xl:grid-cols-3">
+
+            <!-- Información -->
+            <div class="space-y-5">
+                <h2 class="text-2xl font-bold text-indigo-600">
+                    
+                </h2>
+
+                <p class="text-sm leading-6 text-gray-600">
+                    Servicio de ambulancias y atención prehospitalaria disponible
+                    para empresas, instituciones y particulares.
+                </p>
+
+                <div class="flex space-x-5">
+
+                    <!-- Facebook -->
+                    <a href="#" class="text-gray-400 hover:text-indigo-600 transition">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd"
+                                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="#" class="text-gray-400 hover:text-pink-600 transition">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M7.5 2C4.462 2 2 4.462 2 7.5v9C2 19.538 4.462 22 7.5 22h9c3.038 0 5.5-2.462 5.5-5.5v-9C22 4.462 19.538 2 16.5 2h-9ZM12 7a5 5 0 110 10 5 5 0 010-10Zm6-1a1 1 0 110 2 1 1 0 010-2Z" />
+                        </svg>
+                    </a>
+
+                    <!-- WhatsApp -->
+                    <a href="#" class="text-gray-400 hover:text-green-600 transition">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M20.52 3.48A11.8 11.8 0 0012.04 0C5.42 0 .04 5.38.04 12c0 2.12.56 4.2 1.62 6.03L0 24l6.17-1.61A11.94 11.94 0 0012.04 24C18.66 24 24 18.62 24 12a11.9 11.9 0 00-3.48-8.52Z" />
+                        </svg>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Servicios -->
+            <div>
+                <h3 class="text-sm font-semibold text-gray-900 uppercase tracking-wider">
+                    Servicios
+                </h3>
+
+                <ul class="mt-4 space-y-3 text-sm text-gray-600">
+                    <li><a href="#" class="hover:text-indigo-600">Ambulancias</a></li>
+                    <li><a href="#" class="hover:text-indigo-600">Traslados</a></li>
+                    <li><a href="#" class="hover:text-indigo-600">Área Protegida</a></li>
+                    <li><a href="#" class="hover:text-indigo-600">Eventos</a></li>
+                </ul>
+            </div>
+
+            <!-- Contacto -->
+            <div">
+                <h3 class="text-sm font-semibold text-gray-900 uppercase tracking-wider">
+                    Contacto
+                </h3>
+
+                <ul class="mt-4 space-y-3 text-sm text-gray-600">
+                    <li>Barranquilla, Colombia</li>
+                    <li>info@ambucontrol.com</li>
+                    <li>+57 300 000 0000</li>
+                    <li>Lunes - Domingo 24/7</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="mt-12 border-t border-gray-200 pt-8">
+            <p class="text-center text-sm text-gray-500">
+                © 2026 Ambucontrol Emergencias S.A.S. Todos los derechos reservados.
+            </p>
+        </div>
+
+    </div>
+</footer>
 
 
 {% endblock content %}

@@ -5,11 +5,11 @@
 {% url 'login' as login %}
 
 <header class="bg-white">
-  <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+  <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" role="navigation">
     <div class="flex lg:flex-1">
       <a href="{% url 'home' %}" class="-m-1.5 p-1.5">
-        <span class="sr-only">Your Company</span>
-        <img src="{% static 'img/Logo_Ambucontrol.png' %}?color=indigo&shade=600" alt="" class="mx-auto h-20 w-auto mb-5 hover:scale-105 transition duration-300 cursor-pointer" />
+        <span class="sr-only">Ambucontrol</span>
+        <img src="{% static 'img/Logo_Ambucontrol.png' %}?color=indigo&shade=600" alt="Ambucontrol" class="absolute top-2 left-22 h-20 w-auto hover:scale-105 transition duration-300 cursor-pointer" />
       </a>
     </div>
     <div class="flex lg:hidden">
@@ -23,13 +23,13 @@
     <el-popover-group class="hidden lg:flex lg:gap-x-12">
       <div class="relative">
         <button popovertarget="desktop-menu-services" class="flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900 transition-colors duration-300 hover:text-blue-700">
-          Servicios
+          Services
           <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5 flex-none text-gray-400 transition-colors duration-300 hover:text-blue-700">
             <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
           </svg>
         </button>
 
-        <el-popover id="desktop-menu-services" anchor="bottom" popover class="w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg outline-1 outline-gray-900/5 transition transition-discrete [--anchor-gap:--spacing(3)] backdrop:bg-transparent open:block data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
+        <el-popover id="desktop-menu-services" anchor="bottom" popover class="absolute right-0 z-10 mt-12 w-50 overflow-hidden rounded-3xl bg-white shadow-lg outline-1 outline-gray-900/5 transition transition-discrete [--anchor-gap:--spacing(3)] backdrop:bg-transparent open:block data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
           <div class="p-4">
             <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50">
               <div class="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
@@ -123,9 +123,67 @@
       <a href="{% url 'about' %}" class="text-sm/6 font-semibold text-gray-900 transition-colors duration-300 hover:text-blue-700">Nosotros</a> 
       <a href="{% url 'contact' %}" class="text-sm/6 font-semibold text-gray-900 transition-colors duration-300 hover:text-blue-700">Contacto</a>
     </el-popover-group>
-    <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-      <a href="#" class="text-sm/6 font-semibold text-gray-900 transition-colors duration-300 hover:text-blue-700">Ingresar <span aria-hidden="true">&rarr;</span></a>
+    <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center">
+
+        {% if user.is_authenticated %}
+
+        <div class="relative" x-data="{ open: false }">
+
+            <button popovertarget="desktop-menu-login" class="flex items-right gap-x-1 text-sm/6 font-semibold text-gray-900 transition-colors duration-300 hover:text-blue-700">
+                Hola, {{ user.first_name }}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 text-gray-600 group-hover:text-indigo-600">
+                  <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+               	</svg>
+            </button>
+
+            <el-popover id="desktop-menu-login" anchor="bottom" popover class="absolute -right-[80%] z-10 mt-12 w-50 overflow-hidden rounded-3xl bg-white shadow-lg outline-1 outline-gray-900/5 transition transition-discrete [--anchor-gap:--spacing(3)] backdrop:bg-transparent open:block data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
+                  <div class="p-4">
+                  <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50">
+                  <div class="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 text-gray-600 group-hover:text-indigo-600">
+                     <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clip-rule="evenodd"/>
+                    </svg>
+              </div>
+                 <div class="flex-auto">
+                   <a href="{% url 'perfil' %}" class="block font-semibold text-gray-900">
+                     Perfil
+                     <span class="absolute inset-0"></span>
+                   </a>
+                  </div>
+              </div>
+              <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-600">
+                <!--<div class="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 text-gray-600 group-hover:text-indigo-600">
+                    <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clip-rule="evenodd"/>
+                  </svg> 
+              </div> -->
+              <div class="flex-auto">
+                   <a href="{% url 'logout' %}" class="block font-semibold hover:bg-red-50 text-red-600">
+                      Cerrar sesión
+                     <span class="absolute inset-0"></span>
+                   </a>
+              </div>
+            </el-popover>
+
+        {% else %}
+
+        <div class="flex items-center gap-5">
+
+          <a href="{% url 'registro' %}"
+            class="text-sm font-semibold text-gray-700 hover:text-indigo-600 transition">
+              Registrarse
+          </a>
+
+          <a href="{% url 'login' %}"
+            class="text-sm font-semibold text-indigo-600 hover:text-indigo-700 transition">
+              Ingresar →
+          </a>
+
     </div>
+
+    {% endif %}
+
+</div>
   </nav>
   <el-dialog>
     <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
@@ -133,14 +191,18 @@
         <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div class="flex items-center justify-between">
             <a href="{% url 'home' %}" class="-m-1.5 p-1.5">
-              <span class="sr-only">Your Company</span>
-              <img src="{% static 'img/Logo_Ambucontrol.png' %}?color=indigo&shade=600" alt="" class="mx-auto h-20 w-auto mb-5 hover:scale-105 transition duration-300 cursor-pointer" />
+              <span class="sr-only">Ambucontrol</span>
+              <img src="{% static 'img/Logo_Ambucontrol.png' %}?color=indigo&shade=600" alt="" class="absolute top-2 left-22 h-20 w-auto transition duration-300 cursor-pointer" />
             </a>
-            <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+            <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 flex items-center gap-1 rounded-md p-2.5 text-gray-900">
               <span class="sr-only">Close menu</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
                 <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
+               <!-- Texto 
+              <span class="text-sm font-medium">
+               Cerrar-->
+              </span>
             </button>
           </div>
           <div class="mt-6 flow-root">
@@ -148,7 +210,7 @@
               <div class="space-y-2 py-6">
                 <div class="-mx-3">
                   <button type="button" command="--toggle" commandfor="services" class="flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
-                    Servicios
+                    Services
                     <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5 flex-none in-aria-expanded:rotate-180">
                       <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
                     </svg>
@@ -159,16 +221,56 @@
                     <a href="#" class="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-300 hover:text-blue-700">Security</a>
                     <a href="#" class="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-300 hover:text-blue-700">Integrations</a>
                     <a href="#" class="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-300 hover:text-blue-700">Automations</a>
-                    <a href="#" class="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-300 hover:text-blue-700">Watch demo</a>
-                    <a href="#" class="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-300 hover:text-blue-700">Contact sales</a>
                   </el-disclosure>
                 </div>
                 <a href="{% url 'about' %}" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-300 hover:text-blue-700">Nosotros</a>
                 <a href="{% url 'contact' %}" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-300 hover:text-blue-700">Contacto</a>
-              </div>
-              <div class="py-6">
-                <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-300 hover:text-blue-700">Ingresar</a>
-              </div>
+                {% if user.is_authenticated %}
+
+                <div class="relative" x-data="{ open: false }">
+                <button type="button" command="--toggle" commandfor="login" class="flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
+                  Hola, {{ user.first_name }}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 text-gray-600 group-hover:text-indigo-600">
+                    <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+                  </svg>
+                </button>
+                <el-disclosure id="login" hidden class="mt-2 block space-y-2">
+                   <a href="{% url 'perfil' %}" class="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-300 hover:text-blue-700">Perfil</a> 
+                   <a href="{% url 'logout' %}" class="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-red-600 hover:bg-gray-50 transition-colors duration-300 hover:text-red-700">Cerrar sesión</a>
+                </el-disclosure>  
+                {% else %}                    
+                  <div class="py-6">
+
+                            <a href="{% url 'registro' %}"
+                              class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-300 hover:text-blue-700">
+                                Registrarse
+                            </a>
+
+                            <a href="{% url 'login' %}"
+                              class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-300 hover:text-blue-700">
+                                Ingresar
+                            </a>
+
+                      </div>
+                </el-disclosure>
+                {% endif %}                     
+              </div>                                        
+             <!-- <div class="py-6">
+                <a href="{% url 'registro' %}" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-300 hover:text-blue-700">Registrarse</a>
+                <a href="{% url 'login' %}" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-300 hover:text-blue-700">Ingresar</a>
+              </div> -->
+
+                <a href="https://wa.me/573192908240"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="fixed bottom-6 right-10 z-10">
+
+                    <img
+                        src="{% static 'img/whatsapp.svg' %}"
+                        alt="WhatsApp"
+                        class="h-10 w-12 hover:scale-110 transition-transform duration-300 cursor-pointer"
+                    >
+                </a>
             </div>
           </div>
         </el-dialog-panel>
@@ -176,3 +278,20 @@
     </dialog>
   </el-dialog>
 </header>
+
+<a href="https://wa.me/573192908240"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="fixed bottom-6 right-10 z-10">
+
+    <img
+        src="{% static 'img/whatsapp.svg' %}"
+        alt="WhatsApp"
+        class="h-10 w-12 hover:scale-110 transition-transform duration-300 cursor-pointer"
+    >
+</a>
+
+
+
+
+      
