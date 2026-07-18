@@ -24,3 +24,19 @@ class ContactView(View):
             'content': 'Welcome to the Contact Page!'
         }
         return render(request, 'contact.html', context)
+    
+#class LoginView(View):
+    #def get(self, request, *args, **kwargs):
+        #context = {
+            #'title': 'Login Page',
+            #'content': 'Welcome to the Login Page!'
+        #}
+        #return render(request, 'usuarios/login.html', context)
+    
+#class RegistroView(View):
+    #def get(self, request, *args, **kwargs):
+        #context = {
+            #'title': 'Registro Page',
+            #'content': 'Welcome to the Registro Page!'
+        #}
+        #return render(request, 'registro.html', context)
