@@ -6,3 +6,4 @@ gunicorn
 Whitenoise
 mssql-django
 pymssql
+pyodbc
