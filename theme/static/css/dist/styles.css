@@ -905,60 +905,12 @@ input:where([type='file']):focus {
   top: 0.5rem;
 }
 
-.top-4 {
-  top: 1rem;
+.top-24 {
+  top: 6rem;
 }
 
 .top-\[calc\(100\%-13rem\)\] {
   top: calc(100% - 13rem);
-}
-
-.top-3 {
-  top: 0.75rem;
-}
-
-.-top-2 {
-  top: -0.5rem;
-}
-
-.-top-1 {
-  top: -0.25rem;
-}
-
-.top-5 {
-  top: 1.25rem;
-}
-
-.top-8 {
-  top: 2rem;
-}
-
-.top-10 {
-  top: 2.5rem;
-}
-
-.-top-10 {
-  top: -2.5rem;
-}
-
-.top-12 {
-  top: 3rem;
-}
-
-.top-14 {
-  top: 3.5rem;
-}
-
-.top-16 {
-  top: 4rem;
-}
-
-.top-20 {
-  top: 5rem;
-}
-
-.top-24 {
-  top: 6rem;
 }
 
 .isolate {

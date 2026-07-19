@@ -89,19 +89,19 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'mssql',
-        'NAME': 'Tailwind',
-        'USER': 'django_user',
-        'PASSWORD': env('PASSWORD'),
-        'HOST': env('HOST'),
-        'PORT': '',
-        'OPTIONS': {
-            'driver': 'ODBC Driver 17 for SQL Server',
-            'extra_params': 'TrustServerCertificate=yes;',
-        },
+        'default': {
+            'ENGINE': 'mssql',
+            'NAME': 'Tailwind',
+            'USER': 'django_user',
+            'PASSWORD': env('PASSWORD'),
+            'HOST': env('HOST'),
+            'PORT': '',
+            'OPTIONS': {
+                'driver': 'ODBC Driver 17 for SQL Server',
+                'extra_params': 'TrustServerCertificate=yes;',
+            },
+        }
     }
-}
 
 
 # Password validation
