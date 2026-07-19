@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /app
 
-# Instalar dependencias del sistema + Microsoft ODBC Driver 18
+# Instalar dependencias del sistema + Microsoft ODBC Driver 17
 RUN apt-get update && apt-get install -y \
     curl \
     gnupg2 \
