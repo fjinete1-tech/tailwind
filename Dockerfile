@@ -39,4 +39,4 @@ EXPOSE 8000
 
 
 # Ejecutar Django con Gunicorn
-CMD ["gunicorn", "core.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["sh", "-c", "gunicorn core.wsgi:application --bind 0.0.0.0:${PORT:-8000} --access-logfile - --error-logfile - --capture-output --log-level debug"]

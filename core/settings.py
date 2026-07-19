@@ -93,8 +93,8 @@ DATABASES = {
         'ENGINE': 'mssql',
         'NAME': 'Tailwind',
         'USER': 'django_user',
-        'PASSWORD': 'Andrea1499',
-        'HOST': 'LAPTOP-2EH8E3FN',
+        'PASSWORD': env('PASSWORD'),
+        'HOST': env('HOST'),
         'PORT': '',
         'OPTIONS': {
             'driver': 'ODBC Driver 17 for SQL Server',
