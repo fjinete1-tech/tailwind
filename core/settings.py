@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'core',
     'tailwind',
     'theme',
-    'usuarios'
+    'usuarios',
 ]
 
 INTERNAL_IPS = [

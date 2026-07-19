@@ -3,6 +3,7 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from .forms import RegistroForm, LoginForm
 from django.contrib import messages
+import traceback
 
 def registro_view(request):
     if request.method == 'POST':
@@ -19,15 +20,27 @@ def registro_view(request):
 def login_view(request):
     if request.method == 'POST':
         form = LoginForm(request, data=request.POST)
+
         if form.is_valid():
-            usuario = form.get_user()
-            login(request, usuario)
-            messages.success(request, "Inicio de sesión correcto.")
-            return redirect('perfil')
+            try:
+                usuario = form.get_user()
+                print("1. Usuario:", usuario)
+
+                login(request, usuario)
+                print("2. Login realizado")
+
+                return redirect('home')
+
+            except Exception:
+                traceback.print_exc()
+                raise
+
         else:
-            messages.error(request, "Usuario o contraseña incorrectos.")
+            print(form.errors)
+
     else:
         form = LoginForm()
+
     return render(request, 'usuarios/login.html', {'form': form})
 
 def logout_view(request):
