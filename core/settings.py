@@ -163,6 +163,8 @@ if not DEBUG:
     EMAIL_PORT = env('EMAIL_PORT')
     EMAIL_USE_TLS = env('EMAIL_USE_TLS')
 
+    SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+
     SESSION_COOKIE_SECURE = True
     SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
