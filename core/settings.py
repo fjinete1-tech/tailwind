@@ -95,7 +95,7 @@ DATABASES = {
             'USER': 'django_user',
             'PASSWORD': env('PASSWORD'),
             'HOST': env('HOST'),
-            'PORT': '',
+            'PORT': env('PORT'),
             'OPTIONS': {
                 'driver': 'ODBC Driver 17 for SQL Server',
                 'extra_params': 'TrustServerCertificate=yes;',
